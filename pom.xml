@@ -97,13 +97,13 @@
 	    <repository>
 	      <id>nexus</id>
 	      <name>DigiEras Technologies Releases Nexus Repository</name>
-	      <url>http://18.215.148.86:8082/digieras/repository/flipkar-release/</url>
+	      <url>http://44.199.211.82:8081/repository/flipkart-release/</url>
 	    </repository>
 	    
 	    <snapshotRepository>
 	      <id>nexus</id>
 	      <name>DigiEras Technologies Snapshot Nexus Repository </name>
-	      <url>http://18.215.148.86:8082/digieras/repository/flipkart-snapshot//</url>
+	      <url>http://44.199.211.82:8081/repository/flipkart-snapshot/</url>
 	    </snapshotRepository>
 	    
 	</distributionManagement>
