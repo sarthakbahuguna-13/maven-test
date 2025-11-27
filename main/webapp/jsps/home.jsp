@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>DigiErasTechnologies- Home Page</title>
+<title>DigiErasTechnologes- Home Page</title>
 <link href="images/unnamed.jpg" rel="icon">
 </head>
 </head>
