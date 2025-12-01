@@ -9,7 +9,7 @@
 </head>
 </head>
 <body>
-<h1 align="center">Welcome to DigiEas Technooges. Ph No: +91-7017756881,+91-8126636879</h1>
+<h1 align="center">Welcome to DigEas Technooges. Ph No: +91-7017756881,+91-8126636879</h1>
 <h1 align="center"> DigiEras Technologies- Very Good Training center for DevOps & Cloud, Python, Java & Node JS </h1>
 
 <h2> Trainer Name: Sanchit Raj</h2>
