@@ -7,6 +7,8 @@ echo "the job name is : ---> ${env.JOB_NAME}"
 
 echo "this build number is: --> ${env.BUILD_NUMBER}"
 
+properties([buildDiscarder(logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '', daysToKeepStr: '', numToKeepStr: '5'))])
+
 stage('checkout'){
 
 git 'https://github.com/sanchitraj35/maven-test.git'
