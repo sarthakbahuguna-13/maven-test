@@ -1,3 +1,11 @@
+Thank you for the clarification.
+
+To clarify, our current blocker is not repository-level access. The configuration is set up to run through Terraform Cloud using a private provider, and we currently have only Read access to the relevant workspace.
+
+Since the execution is restricted to Terraform Cloud remote runs, we require Plan/Run (or Write) access to the Non-Prod workspace to proceed with testing and validation.
+
+Could you please help grant the appropriate access to the Non-Prod workspace?
+
 node {
 def mavenHome = tool name: "maven-1"
 
