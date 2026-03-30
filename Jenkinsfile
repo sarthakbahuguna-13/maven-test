@@ -8,15 +8,13 @@ pipeline {
         RELEASE_NAME = "java-app"
     }
 
-    stages {
         stage('Clone Code') {
             steps {
-                // Using your SSH URL and the credential ID we created
+                // No credentialsId needed for a public HTTPS repo
                 git branch: 'master', 
-                    credentialsId: 'github-ssh', 
-                    url: 'git@github.com:sarthakbahuguna-13/maven-test.git'
-            }
-        }
+                url: 'https://github.com/sarthakbahuguna-13/maven-test.git'
+           }
+       }
 
         stage('Build JAR') {
             steps {
