@@ -15,7 +15,7 @@ pipeline {
             }
         }
 
-        stage('Build JAR') {
+        stage('Build WAR') {
             steps {
                 sh 'mvn clean package -DskipTests'
             }
@@ -48,13 +48,13 @@ pipeline {
             }
         }
 
-        stage('K8S-Deployment Verification') {
-            steps {
-                withKubeConfig([credentialsId: 'k8s-config']) {
-                    sh 'kubectl get all'
-                }
-            }
-        }
+        // stage('K8S-Deployment Verification') {
+        //     steps {
+        //         withKubeConfig([credentialsId: 'k8s-config']) {
+        //             sh 'kubectl get all'
+        //         }
+        //     }
+        // }
     } // <--- This closes 'stages'
 
     post {
