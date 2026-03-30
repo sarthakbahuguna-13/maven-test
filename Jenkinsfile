@@ -2,19 +2,18 @@ pipeline {
     agent any
 
     environment {
-        // Your specific Docker Hub repo
         DOCKER_IMAGE = "sarthak13bahuguna/java-app"
         IMAGE_TAG = "${BUILD_NUMBER}"
         RELEASE_NAME = "java-app"
     }
 
+    stages { // <--- This was missing!
         stage('Clone Code') {
             steps {
-                // No credentialsId needed for a public HTTPS repo
                 git branch: 'master', 
-                url: 'https://github.com/sarthakbahuguna-13/maven-test.git'
-           }
-       }
+                    url: 'https://github.com/sarthakbahuguna-13/maven-test.git'
+            }
+        }
 
         stage('Build JAR') {
             steps {
@@ -39,7 +38,6 @@ pipeline {
 
         stage('Deploy via Helm') {
             steps {
-                // Injecting the kubeconfig secret to talk to the remote host
                 withKubeConfig([credentialsId: 'k8s-config']) {
                     sh """
                     helm upgrade --install $RELEASE_NAME ./java-app \
@@ -49,7 +47,7 @@ pipeline {
                 }
             }
         }
-    }
+    } // <--- This closes 'stages'
 
     post {
         success {
@@ -59,4 +57,4 @@ pipeline {
             echo "Build failed. Check the console logs for the red stage."
         }
     }
-}
+} // <--- This closes 'pipeline'
