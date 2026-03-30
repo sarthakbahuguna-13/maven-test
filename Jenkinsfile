@@ -47,6 +47,14 @@ pipeline {
                 }
             }
         }
+
+        stage('K8S-Deployment Verification') {
+            steps {
+                withKubeConfig([credentialsId: 'k8s-config']) {
+                    sh 'kubectl get all'
+                }
+            }
+        }
     } // <--- This closes 'stages'
 
     post {
